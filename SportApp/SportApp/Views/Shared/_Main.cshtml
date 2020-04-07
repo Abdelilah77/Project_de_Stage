@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="navbar  navbar-default navbar-fixed-top " style="">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Nb">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">AH</a>
+            </div>
+            <nav id="Nb" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class=""><a href="">Home</a></li>
+                    <li class=""><a href="">Contact</a></li>
+                    <li class=""><a href="">About</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" style="color: #22d1ee;" data-toggle="dropdown">Share <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Facebook</a></li>
+                            <li><a href="">twitter</a></li>
+                            <li><a href="">Insatgram</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li style="margin-left:180px" class="Mar Dow">
+                        <label>Code : </label>
+                        <div class="input-group" style="display:inline-block;">
+
+                            <input type="password" style="color:black;" placeholder="Your Private Code" id="InputPass" />
+                            <button class="Bt" style="border:none;margin:0; color:white;">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </button>
+                        </div>
+
+                        <button id="Ckeck" class="mybtn3">Check</button>
+
+                    </li>
+
+                    <li>
+                        <div id="Ad" style="margin-left:180px; margin-top:5px;margin-right:8px;">
+                            <button id="Admin" class="mybtn">Admin</button>
+                            <button id="Entre" class="mybtn2">Entraineur</button>
+
+                        </div>
+                    </li>
+                    <li> <input type="checkbox" name="name" value="" class="navbar-right" /> </li>
+                </ul>
+
+            </nav>
+
+        </div>
+    </div>
+
+
+
+    <div> @RenderBody()</div>
+
+   
+</body>
+
+
+
+
+
+</html>
+<style>
+    .mybtn3{
+        color:#22d1ee;
+        background-color:#0e153a;
+        border:none;
+        padding:6px;
+        margin:5px;
+        transition:.5s ease;
+    }
+     .mybtn3:hover{
+        color:#0e153a;
+        background-color:#e2f3f5;
+        border:none;
+        padding:6px;
+        margin:5px;
+    }
+    .mybtn,.mybtn2{
+        border:none;
+        color:#fff;
+        padding:6px;
+        margin:5px;
+        background-color:#3b5999;
+        cursor:pointer;
+    }
+    .mybtn2{
+        background-color:#cd201f;
+    }
+     .navbar-default{
+        background:transparent;
+        border:none;
+        margin:0;
+        
+        color:#22d1ee;
+        padding:10px;
+
+    }
+    .sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #0e153a;
+    -webkit-box-shadow: 0 3px 19px rgba(14,19,28,0.4);
+    box-shadow: 0 3px 19px rgba(14,19,28,0.4);
+    z-index: 3;
+}
+    .navbar-default .navbar-brand,.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>li>a 
+    ,.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus,
+    .navbar-default .navbar-nav>.open>a:hover{
+          color:#22d1ee;
+          font-family: 'Brandon Grotesque', Arial, sans-serif;
+          font-size: 13px;
+          font-weight: 900;
+          margin: 0 15px;
+ 
+    }
+  .navbar-default .navbar-nav>.active>a{
+      background-color:#378eef;
+
+  }
+   .navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>li>a:hover{
+      background-color:#1d60ab;
+      color:#22d1ee;
+  }
+    .navbar-default .navbar-brand:hover{
+        color:#22d1ee;
+    }
+    @@media only screen and (min-width: 768px){
+        .navbar-default .navbar-nav {
+         margin-left:100px;
+
+      }
+         .Mar{
+         margin-top:5px;
+         margin-right:8px;
+         
+     }
+      
+    }
+      @@media only screen and (max-width: 768px){
+
+        input[type = checkbox] {
+            margin:10px;
+        }
+    }
+
+     input[type = checkbox] {
+        cursor:pointer;
+        position:absolute;
+        margin-top:17px;
+        margin-left:40px;
+        width:40px;
+        height:20px;
+        -webkit-appearance: none;
+        outline:none;
+        background:#c6c6c6;
+        border-radius:20px;
+        transition:.5s ease-out;
+        box-shadow:inset 0 0 5px rgba(0,0,0,.2);
+       
+    }
+     input:checked[type = checkbox],.Bt{
+         background-color:#22d1ee;
+     }
+    input[type = checkbox]::before {
+        position: absolute;
+        content: '';
+        width: 20px;
+        top: 0;
+        left: 0;
+        height: 20px;
+        border-radius: 20px;
+        background-color: #fff;
+        transform: scale(1.05);
+        transition: .5s ease-out;
+    }
+
+    input:checked[type = checkbox]::before {
+        left: 20px;
+    }
+
+    .Mar {
+        margin-top: 5px;
+        margin-right: 8px;
+    }
+     .Dow{
+     
+     }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        $(".Mar").hide();
+        $("#Ad").hide();
+     
+
+    });
+    $("input[type=checkbox]").click(function () {
+        if ($(this).prop("checked")) {
+            $(".Mar").show("fade",500);
+
+        }
+        else $(".Mar").hide();  $("#Ad").hide();
+    });
+    var HolderTest = false;
+    $(".Bt").click(function () {
+        if (HolderTest == false) {
+            $("#InputPass").attr("type", "text");
+            HolderTest = !HolderTest;
+        }
+        else if (HolderTest) {
+             $("#InputPass").attr("type", "password");
+            HolderTest = !HolderTest;
+        }
+    });
+    document.querySelector("#Ckeck").addEventListener("click", function () {
+        var Value = $("#InputPass").val();
+   
+        if (Value == "a") {
+            $("#InputPass").val("");
+            $(".Mar").hide(300, "swing");
+            sleep(600);
+            $("#Ad").show("fade",500);
+
+                }
+    })
+       
+    
+function sleep(delay) {
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + delay);
+}
+     const header = document.querySelector('.navbar-default');
+
+// Toggle the sticky class on window scroll
+     window.addEventListener('scroll', () => {
+    header.classList.toggle('sticky', window.scrollY > 0);
+});   
+</script>
