@@ -1,0 +1,44 @@
+﻿
+@model SportApp.Models.Coach
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Login", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(c => c.Login)
+            </td>
+            <td>
+                @Html.EditorFor(c => c.Login)
+                @Html.ValidationMessageFor(c => c.Login)
+            </td>
+
+
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(c => c.Password)
+            </td>
+
+            <td>
+                @Html.EditorFor(c => c.Password)
+                @Html.ValidationMessageFor(c => c.Password)
+            </td>
+
+        </tr>
+        <tr>
+            <td> <input type="submit" name="" value="lndex" /></td>
+        </tr>
+    </table>
+}
+<style>
+    table {
+        position: relative;
+        margin-top: 100px;
+    }
+</style>
+
